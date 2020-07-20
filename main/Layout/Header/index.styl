@@ -1,0 +1,66 @@
+$headerHeight = 16u
+
+.root
+  background-color white
+  z-index 1
+  align-items center
+  padding 0 2u
+  border-bottom-width 1px
+  border-bottom-color rgba(black, 0.05)
+  min-height $headerHeight
+  position absolute
+  width 100%
+
+.headerSpace
+  height $headerHeight
+
+.logo
+  justify-content center
+  width 15u
+  height 4u
+
+.body
+  flex 1
+
+.buttons
+  flex-direction row
+
+.button
+  margin-left 2u
+
+.header
+    padding 4u 0
+    height 100%
+    width 100%
+
+.topHeader
+    flex 0 0
+    flex-basis 100%
+    justify-content space-between
+    flex-direction row
+
+.nav
+    margin-top 2u
+    height 0
+    transition height 0.3s
+    overflow scroll
+    &.active
+        height 28u
+
+.navElem, .subnavElem
+    padding 2u
+    background #f8f8f8
+    border-top 1px solid #ddd
+    cursor pointer
+
+.navElem
+    flex-direction row
+    justify-content space-between
+
+.navElemText
+    font-weight bold
+    color #666666
+
+.subnavElem
+    padding-left 4u
+    color #444
