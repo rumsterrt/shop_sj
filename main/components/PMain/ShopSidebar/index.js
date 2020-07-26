@@ -31,9 +31,9 @@ const ratingData = [
   }
 ]
 
-const ShopSidebar = () => {
+const ShopSidebar = ({ style }) => {
   return pug`
-    Div.root
+    Div.root(style=style)
       Div.widget
         Text.sidebarTitle Search Products
         Row.widgetBody.sidebarSearch(align='between' vAlign='center')

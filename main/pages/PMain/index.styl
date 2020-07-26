@@ -2,6 +2,10 @@
   margin 0 auto
   width calc(100% - 4u)
   height 100%
+  +tablet()  
+    width calc(100% - 6u)
+  +wide()  
+    width calc(100% - 12u)
 
 .layout
   background white
@@ -12,8 +16,9 @@
   background white
   +wide()
     flex-direction row
+    margin 0 12u
   
 .sidebar
-  width 30%
-  padding-right 3u
+  +wide()
+    width 20%
   
