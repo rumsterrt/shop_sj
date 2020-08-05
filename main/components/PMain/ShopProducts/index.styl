@@ -1,0 +1,56 @@
+.root
+    +tablet()
+        margin-top 4u
+    +wide()
+        padding-left 10u
+        flex 1
+        margin-top 12u
+
+.shopBar
+    +tablet()
+        flex-direction row
+        align-items center
+        justify-content space-between
+
+.shopContentWrapper
+    display block
+
+.shopContent
+    margin-left -2u
+    margin-right -2u
+    margin-top 8u
+    margin-bottom 6u
+    width auto
+    align-self center
+    +tablet()
+        flex-flow row wrap
+        &.grid
+            flex-flow column nowrap
+
+.shopFoundSelector
+    flex-direction row
+    align-items center
+    margin-top 4u
+    +tablet()
+        margin-top 0
+
+.sortSelector
+    margin-left 2u
+    width 14u
+    border none
+
+.selectorLabel, .itemsInfo
+    font-size 2.5u
+    color #6c6c6c
+    font-weight 600
+
+.shopFilterTab
+    margin-top 4u
+    flex-direction row
+    +tablet()
+        margin-top 0
+.lastTabButton
+    margin-left 4u
+
+.button.last
+    margin-left 2u

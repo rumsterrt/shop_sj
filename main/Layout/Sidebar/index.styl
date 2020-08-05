@@ -1,0 +1,42 @@
+.overlay
+    background: rgba(0, 0, 0, 0.92)
+    position: fixed
+    left: 100%
+    top: 0
+    bottom: 0
+    right: 0
+    z-index 2
+    transition left 0.3s
+    &.active
+        left 0
+    &.fake
+        background transparent
+        z-index 3
+
+.closeButton
+    position absolute
+    top 3u
+    right 5u
+    align-self flex-end
+
+.searchBar
+    padding 4u 5u
+    justify-content center
+    height 100%
+
+.search
+    flex-direction row
+    align-items center
+    background-color transparent
+    padding-bottom 2u
+    border-bottom 1px white solid
+    margin 2u
+.searchInput
+    margin-right 2u
+    border none
+    flex 1
+    user-select none
+    color white
+    padding 2u
+
+

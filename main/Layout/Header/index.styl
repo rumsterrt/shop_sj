@@ -1,0 +1,45 @@
+$headerHeight = 16u
+
+.root
+  background-color white
+  z-index 2
+  align-items center
+  padding 0 2u
+  border-bottom-width 1px
+  border-bottom-color rgba(black, 0.05)
+  min-height $headerHeight
+  position absolute
+  width 100%
+  +tablet()
+    padding 0 3u
+  +wide()
+    padding 0 20u
+
+.headerSpace
+  height $headerHeight
+
+.logo
+  justify-content center
+  width 15u
+  height 4u
+
+.body
+  flex 1
+
+.buttons
+  flex-direction row
+
+.button
+  margin-left 2u
+
+.header
+    //padding 4u 0
+    height 100%
+    width 100%
+
+.topHeader
+    flex 0 0
+    flex-basis 100%
+    justify-content space-between
+    flex-direction row
+    align-items center

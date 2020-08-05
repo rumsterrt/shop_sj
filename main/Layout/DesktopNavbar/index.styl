@@ -1,0 +1,35 @@
+.nav
+    display none
+    +wide()
+        display flex
+        flex-direction row
+
+.navElem
+    margin 0 3u
+    cursor pointer
+
+.navElem
+    flex-direction row
+    justify-content space-between
+
+.navElemText
+    font-weight bold
+    text-transform uppercase
+    line-height 16u
+
+.subnav
+    position absolute
+    background #fff none repeat scroll 0 0
+    top 100%
+    border-top 1px solid #dcdcdc
+    padding 4u 2u 3u
+    width 32u
+    box-shadow 0 3px 7px rgba(0, 0, 0, 0.1)
+
+.subnavElem
+    color #333
+    margin-top 2u
+    font-weight 400
+    font-size 2u
+    &.first
+        margin-top 0
