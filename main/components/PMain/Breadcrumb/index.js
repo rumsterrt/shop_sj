@@ -10,7 +10,7 @@ const Breadcrumb = () => {
         Text.title Shop
         Div.nav
           Text.navElem HOME
-          = ' / '
+          Text.navElem.slice /
           Text.navElem.select SHOP
   `
 }

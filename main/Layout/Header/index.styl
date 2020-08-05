@@ -2,7 +2,7 @@ $headerHeight = 16u
 
 .root
   background-color white
-  z-index 1
+  z-index 2
   align-items center
   padding 0 2u
   border-bottom-width 1px
@@ -13,7 +13,7 @@ $headerHeight = 16u
   +tablet()
     padding 0 3u
   +wide()
-    padding 0 6u
+    padding 0 20u
 
 .headerSpace
   height $headerHeight
@@ -33,7 +33,7 @@ $headerHeight = 16u
   margin-left 2u
 
 .header
-    padding 4u 0
+    //padding 4u 0
     height 100%
     width 100%
 
@@ -42,29 +42,4 @@ $headerHeight = 16u
     flex-basis 100%
     justify-content space-between
     flex-direction row
-
-.nav
-    margin-top 2u
-    height 0
-    transition height 0.3s
-    overflow scroll
-    &.active
-        height 28u
-
-.navElem, .subnavElem
-    padding 2u
-    background #f8f8f8
-    border-top 1px solid #ddd
-    cursor pointer
-
-.navElem
-    flex-direction row
-    justify-content space-between
-
-.navElemText
-    font-weight bold
-    color #666666
-
-.subnavElem
-    padding-left 4u
-    color #444
+    align-items center

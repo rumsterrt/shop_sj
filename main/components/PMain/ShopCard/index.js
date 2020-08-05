@@ -2,13 +2,11 @@ import React from 'react'
 import { Text } from 'react-native'
 import { Row, Div, Button } from '@startupjs/ui'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
-//import Image from 'react-native-scalable-image'
 import './index.styl'
 
 const ShopProducts = ({ img, isFull, style }) => {
   const styleAdd = !isFull ? 'nofull' : 'full'
 
-  console.log('img', img)
   return pug`
     Div.root(style=style styleName=styleAdd)
       Div.image(styleName=styleAdd style={backgroundImage: 'url('+img+')'})

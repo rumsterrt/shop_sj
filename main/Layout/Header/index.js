@@ -1,38 +1,39 @@
 import React from 'react'
 import { observer, useValue, useLocal } from 'startupjs'
 import './index.styl'
-import { Row, Div, Button, Icon } from '@startupjs/ui'
-import { Image, Text } from 'react-native'
-import { faBars, faSearch, faShoppingBag, faPlus, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { Row, Div, Button } from '@startupjs/ui'
+import { Image, Platform } from 'react-native'
+import { faBars, faSearch, faShoppingBag, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { BASE_URL } from '@env'
 import navBarArray from './navBarData'
+import MobileNavbar from '../MobileNavbar'
+import DesktopNavbar from '../DesktopNavbar'
 const base = BASE_URL
 
 const Header = ({ children }) => {
   const [, $sidebar] = useLocal('_session.sidebar')
   const [menuOpen, $menuOpen] = useValue(false)
-  const [subMenuOpen, $subMenuOpen] = useValue(navBarArray.reduce((acc, { name }) => ({ ...acc, [name]: false }), {}))
 
-  const handleSubmenuClick = (name) => () => $subMenuOpen.set({ ...subMenuOpen, [name]: !subMenuOpen[name] })
+  const handleBurger = () => {
+    if (Platform.OS === 'web') {
+      $sidebar.set('lang')
+      return
+    }
+
+    $menuOpen.set(!menuOpen)
+  }
 
   return pug`
     Row.root
       Div.header
         Div.topHeader
           Image.logo(source={uri:base + '/img/logo.png'})
+          DesktopNavbar(data=navBarArray)
           Div.buttons
             Button.button(color='black' size='l' variant="text" icon=faSearch onPress=() => $sidebar.set('search'))
             Button.button(color='black' size='l' variant="text"  icon=faShoppingBag onPress=() => $sidebar.set('cart'))
-            Button.button(color='black' shape="squared" size='l' icon=(menuOpen ? faTimes : faBars) onPress=() => $menuOpen.set(!menuOpen))
-        Div.nav(styleName=(menuOpen? 'active': ''))
-          each navElem in navBarArray
-            Div.navElem(key=navElem onPress=handleSubmenuClick(navElem.name))
-              Text.navElemText #{navElem.name}
-              if navElem.subNavs && navElem.subNavs.length > 0
-                Icon(icon=faPlus color='black' size='l')
-            if subMenuOpen[navElem.name]
-              each subnavElem in (navElem.subNavs || [])
-                Text.subnavElem(key=subnavElem.name) #{subnavElem.name}
+            Button.button(color='black' shape="squared" size='l' icon=(menuOpen ? faTimes : faBars) onPress=handleBurger)
+        MobileNavbar(data=navBarArray isOpen=menuOpen)
       Div.body= children
     Div.headerSpace
   `

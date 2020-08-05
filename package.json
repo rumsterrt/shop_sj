@@ -32,7 +32,6 @@
     "react-dom": "^16.13.1",
     "react-native": "0.63.1",
     "react-native-collapsible": "^1.5.2",
-    "react-native-scalable-image": "^1.0.0",
     "react-native-svg": "^12.1.0",
     "react-native-web": "^0.12.0",
     "startupjs": "^0.23.17"

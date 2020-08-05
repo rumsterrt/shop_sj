@@ -5,6 +5,7 @@ import { Div, Button, Icon } from '@startupjs/ui'
 import { TextInput } from 'react-native'
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
 import CartSidebar from 'main/components/CartSidebar'
+import CurLangSidebar from 'main/components/CurLangSidebar'
 
 const Sidebar = () => {
   const [render, $render] = useLocal('_session.sidebar')
@@ -21,7 +22,11 @@ const Sidebar = () => {
             `
       case 'cart':
         return pug`
-          CartSidebar(onClose=() => $render.set(false))
+          CartSidebar.cartSidebar(onClose=() => $render.set(false))
+        `
+      case 'lang':
+        return pug`
+          CurLangSidebar(onClose=() => $render.set(false))
         `
     }
     return null
@@ -29,6 +34,7 @@ const Sidebar = () => {
 
   return pug`
     Div.overlay(styleName=render? 'active': '')
+    Div.overlay.fake(styleName=render? 'active': '')
       = content()
   `
 }
