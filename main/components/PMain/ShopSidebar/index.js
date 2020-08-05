@@ -1,6 +1,6 @@
 import React from 'react'
-import { Text, Image, TextInput } from 'react-native'
-import { Row, Icon, Div } from '@startupjs/ui'
+import { Text, Image, TextInput, View } from 'react-native'
+import { Icon, Rating } from 'components'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './index.styl'
 
@@ -33,55 +33,56 @@ const ratingData = [
 
 const ShopSidebar = ({ style }) => {
   return pug`
-    Div.root(style=style)
-      Div.widget
+    View.root(style=style)
+      View.widget
         Text.sidebarTitle Search Products
-        Row.widgetBody.sidebarSearch(align='between' vAlign='center')
+        View.widgetBody.sidebarSearch
           TextInput.searchInput(icon=faSearch iconPosition="right" placeholder="Search Products...")
           Icon.searchIcon(icon=faSearch color='red' size='l')
-      Div.widget
+      View.widget
         Text.sidebarTitle Categories
-        Div.widgetBody.sidebarCategories
-          Row.category.first(align='between')
+        View.widgetBody.sidebarCategories
+          View.category.first
             Text.text Accessories
             Text.text 4
-          Row.category(align='between')
+          View.category
             Text.text Book
             Text.text 9
-          Row.category(align='between')
+          View.category
             Text.text Clothing
             Text.text 5
-          Row.category(align='between')
+          View.category
             Text.text Homelife
             Text.text 3
-          Row.category(align='between')
+          View.category
             Text.text Kids & Baby
             Text.text 4
-      Div.widget
+      View.widget
         Text.sidebarTitle color
-        Row.widgetBody.productColor
-          Div.color.first(style={backgroundColor: 'red'})
-          Div.color(style={backgroundColor: 'pink'})
-          Div.color(style={backgroundColor: 'blue'})
-          Div.color(style={backgroundColor: 'yellow'})
-          Div.color(style={backgroundColor: 'green'})
-          Div.color(style={backgroundColor: 'purple'})
-      Div.widget
+        View.widgetBody.productColor
+          View.color.first(style={backgroundColor: 'red'})
+          View.color(style={backgroundColor: 'pink'})
+          View.color(style={backgroundColor: 'blue'})
+          View.color(style={backgroundColor: 'yellow'})
+          View.color(style={backgroundColor: 'green'})
+          View.color(style={backgroundColor: 'purple'})
+      View.widget
         Text.sidebarTitle size
-        Row.widgetBody.productSize
+        View.widgetBody.productSize
           Text.sizeText.first XL
           Text.sizeText M
           Text.sizeText L
           Text.sizeText ML
           Text.sizeText LM
-      Div.widget
+      View.widget
         Text.sidebarTitle Top rated products
-        Div.widgetBody.topRatedAll
+        View.widgetBody.topRatedAll
           each card, index in ratingData
-            Row.rateCard(key=index styleName=(index === 0 ? 'first' : ''))
+            View.rateCard(key=index styleName=(index === 0 ? 'first' : ''))
               Image.rateImage(source=card.url)
-              Div.rateInfo
+              View.rateInfo
                 Text.text #{card.name}
+                Rating.rating(value=3)
                 Text.text #{card.price}
   `
 }

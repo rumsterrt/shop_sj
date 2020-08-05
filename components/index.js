@@ -1,6 +1,6 @@
 import Button from './Button'
 import Link from './Link'
-import Title from './Title'
+import Rating from './Rating'
 import Icon from './Icon'
 
-export { Button, Link, Title, Icon }
+export { Button, Link, Rating, Icon }

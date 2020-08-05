@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
-import { Row, Icon } from '@startupjs/ui'
-import { Link } from 'components'
+import { Link, Icon } from 'components'
 import { emit } from 'startupjs'
 import { faTwitter, faTwitch, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { BASE_URL } from '@env'
@@ -22,7 +21,7 @@ const Footer = () => {
           Icon.icon(icon=faInstagram size='xl' color='#3f3f3f')
       View.middle
         Image.logo(source={uri:base + '/img/logo.png'})
-        Row.nav
+        View.nav
           Text.navElem.first HOME
           Text.navElem ABOUT US
           Text.navElem SHOP
@@ -35,13 +34,13 @@ const Footer = () => {
           = 'neha' 
           = ' 2018 . All Right Reserved.' 
       View.bottom
-        Row.tableRow
+        View.tableRow
           Text.tableName PHONE:
           Text.tableValue +012 345 678 102
-        Row.tableRow
+        View.tableRow
           Text.tableName EMAIL:
           Text.tableValue info@example.com
-        Row.tableRow
+        View.tableRow
           Text.tableName ADDRESS:
           Text.tableValue Dhaka Bangladesh
     `

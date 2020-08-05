@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Icon, Div } from '@startupjs/ui'
+import { Icon } from 'components'
 import { faBars, faTh } from '@fortawesome/free-solid-svg-icons'
 import ShopCard from '../ShopCard'
-import { Text, Picker } from 'react-native'
+import { Text, Picker, View } from 'react-native'
 import './index.styl'
 import { BASE_URL } from '@env'
 const base = BASE_URL
@@ -35,19 +35,19 @@ const ShopProducts = () => {
   }
 
   return pug`
-    Div.root
-      Div.shopBar
+    View.root
+      View.shopBar
         Text.itemsInfo 23 Product Found of 50
-        Div.shopFoundSelector
+        View.shopFoundSelector
           Text.selectorLabel Sort By:
           Picker.sortSelector(value=sort onChange=value => setSort(value))
             each option in sortItems
               PickerItem(label=option value=option key=option)
-        Div.shopFilterTab
-          Icon(icon=faTh color=(!gridView ? '#ff4136' :'#6c6c6c') size='xxl' onPress=() => setGridView(false))
-          Icon.lastTabButton(icon=faBars color=(gridView ? '#ff4136' :'#6c6c6c') size='xxl' onPress=() => setGridView(true))
-      Div.shopContentWrapper 
-        Div.shopContent(styleName=(gridView? 'grid' : ''))
+        View.shopFilterTab
+          Icon(icon=faTh color=(!gridView ? '#ff4136' :'#6c6c6c') size='l' onPress=() => setGridView(false))
+          Icon.lastTabButton(icon=faBars color=(gridView ? '#ff4136' :'#6c6c6c') size='l' onPress=() => setGridView(true))
+      View.shopContentWrapper 
+        View.shopContent(styleName=(gridView? 'grid' : ''))
           each card, index in cards
             ShopCard.card(key=index img=card isFull=gridView styleName=(index === 0 ? 'first' : ''))
   `

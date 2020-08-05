@@ -1,12 +1,13 @@
 import React from 'react'
-import { Layout as UILayout } from '@startupjs/ui'
+import { View } from 'react-native'
 import Header from './Header'
 import Sidebar from './Sidebar'
 import Footer from './Footer'
+import './index.styl'
 
 const Layout = ({ children }) => {
   return pug`
-    UILayout
+    View.layout
       Sidebar
       Header
       = children

@@ -1,9 +1,9 @@
 import React from 'react'
 import { observer, useLocal } from 'startupjs'
 import './index.styl'
-import { Div, Button, Icon } from '@startupjs/ui'
-import { TextInput } from 'react-native'
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { Button, Icon } from 'components'
+import { TextInput, View } from 'react-native'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import CartSidebar from 'main/components/CartSidebar'
 import CurLangSidebar from 'main/components/CurLangSidebar'
 
@@ -14,9 +14,9 @@ const Sidebar = () => {
     switch (render) {
       case 'search':
         return pug`
-          Div.searchBar
-            Button.closeButton(color='white' size='xxl' variant="text" icon=faTimes onPress=() => $render.set(false))
-            Div.search
+          View.searchBar
+            Button.closeButton(icon={color:'white', size:'xl', name:'times'} onPress=() => $render.set(false))
+            View.search
               TextInput.searchInput(icon=faSearch iconPosition="right" placeholder="Search Entire Store")
               Icon.searchIcon(icon=faSearch color='white' size='l')
             `
@@ -33,8 +33,8 @@ const Sidebar = () => {
   }
 
   return pug`
-    Div.overlay(styleName=render? 'active': '')
-    Div.overlay.fake(styleName=render? 'active': '')
+    View.overlay(styleName=render? 'active': '')
+    View.overlay.fake(styleName=render? 'active': '')
       = content()
   `
 }

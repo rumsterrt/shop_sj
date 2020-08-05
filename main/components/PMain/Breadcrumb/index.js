@@ -1,14 +1,13 @@
 import React from 'react'
-import { Div } from '@startupjs/ui'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import './index.styl'
 
 const Breadcrumb = () => {
   return pug`
-    Div.root
-      Div.wrapper
+    View.root
+      View.wrapper
         Text.title Shop
-        Div.nav
+        View.nav
           Text.navElem HOME
           Text.navElem.slice /
           Text.navElem.select SHOP

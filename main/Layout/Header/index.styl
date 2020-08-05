@@ -3,20 +3,19 @@ $headerHeight = 16u
 .root
   background-color white
   z-index 2
-  align-items center
-  padding 0 2u
+  padding 4u 2u
   border-bottom-width 1px
   border-bottom-color rgba(black, 0.05)
-  min-height $headerHeight
   position absolute
   width 100%
+  display block
   +tablet()
     padding 0 3u
   +wide()
     padding 0 20u
 
 .headerSpace
-  height $headerHeight
+  height 12u
 
 .logo
   justify-content center
@@ -31,9 +30,13 @@ $headerHeight = 16u
 
 .button
   margin-left 2u
+  border none 
+  &.burger
+    border 1px solid grey 
+    padding 4px
+    border-radius 0
 
 .header
-    //padding 4u 0
     height 100%
     width 100%
 

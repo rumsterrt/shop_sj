@@ -1,8 +1,8 @@
 import React from 'react'
 import { observer, useValue } from 'startupjs'
 import './index.styl'
-import { Div, Icon } from '@startupjs/ui'
-import { Text } from 'react-native'
+import { Icon } from 'components'
+import { Text, View } from 'react-native'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 const MobileNavbar = ({ isOpen, data }) => {
@@ -11,12 +11,12 @@ const MobileNavbar = ({ isOpen, data }) => {
   const handleSubmenuClick = (name) => () => $subMenuOpen.set({ ...subMenuOpen, [name]: !subMenuOpen[name] })
 
   return pug`
-    Div.nav(styleName=(isOpen? 'active': ''))
+    View.nav(styleName=(isOpen? 'active': ''))
       each navElem in data
-        Div.navElem(key=navElem onPress=handleSubmenuClick(navElem.name))
+        View.navElem(key=navElem onPress=handleSubmenuClick(navElem.name))
           Text.navElemText #{navElem.name}
           if navElem.subNavs && navElem.subNavs.length > 0
-            Icon(icon=faPlus color='black' size='l')
+            Icon(icon=faPlus color='black' size='xs')
         if subMenuOpen[navElem.name]
           each subnavElem in (navElem.subNavs || [])
             Text.subnavElem(key=subnavElem.name) #{subnavElem.name}

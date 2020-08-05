@@ -1,17 +1,16 @@
 import React from 'react'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
+import Icon from '../Icon'
 import './index.styl'
 
-const types = {
-  primary: 'primary',
-  secondary: 'secondary',
-  transparent: 'transparent'
-}
-
-const Button = ({ text, onPress, style, type }) => {
+const Button = ({ text, onPress = () => {}, style, type = '', icon }) => {
+  console.log('icon', icon)
   return pug`
-    TouchableOpacity.root(onPress=onPress && onPress() style=style)
-      = text
+    TouchableOpacity.root(onPress=onPress style=style styleName=[type, {icon: !!icon} ])
+      if text
+        Text.text(styleName=type) #{text}
+      if icon
+        Icon.icon(name=icon.name size=icon.size || 's' color=icon.color || 'white')
     `
 }
 

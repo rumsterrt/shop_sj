@@ -1,7 +1,7 @@
 import React from 'react'
-import { Div, Button, Icon } from '@startupjs/ui'
-import { Text, Image } from 'react-native'
-import { faTimes, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Button, Icon } from 'components'
+import { Text, Image, View } from 'react-native'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import './index.styl'
 
 const data = [
@@ -24,22 +24,22 @@ const data = [
 
 const CartSidebar = ({ onClose }) => {
   return pug`
-    Div.root
-      Button.closeButton(color='black' size='xxl' variant="text" icon=faTimes onPress=() => onClose && onClose())
-      Div.main
+    View.root
+      Button.closeButton(icon={color:'black', size:'xl', name:'times'} onPress=() => onClose && onClose())
+      View.main
         Text.title Shopping Cart
-        Div.cards
+        View.cards
           each card in data
-            Div.card
+            View.card
               Image.cardImage(source=card.url)
-              Div.cardInfo
+              View.cardInfo
                 Text.cardName #{card.name}
                 Text.cardCommon #{card.common}
               Icon.cardTrash(icon=faTrash color='black' size='l')
-        Div.total
+        View.total
           Text.totalText #{'Total: '}
             span $ 120
-        Div.buttons
+        View.buttons
           Button.button(color='#E3E2E2' shape='squared' textColor='rgb(93, 93, 93)' size='l' variant="flat") VIEW CART
           Button.button.last(color='#E3E2E2' shape='squared' textColor='rgb(93, 93, 93)' size='l' variant="flat") CHECKOUT
 
