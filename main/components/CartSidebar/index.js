@@ -40,8 +40,8 @@ const CartSidebar = ({ onClose }) => {
           Text.totalText #{'Total: '}
             span $ 120
         View.buttons
-          Button.button(color='#E3E2E2' shape='squared' textColor='rgb(93, 93, 93)' size='l' variant="flat") VIEW CART
-          Button.button.last(color='#E3E2E2' shape='squared' textColor='rgb(93, 93, 93)' size='l' variant="flat") CHECKOUT
+          Button.button(text='VIEW CART') 
+          Button.button.last(text='CHECKOUT')
 
   `
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import { Button } from 'components'
-import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import './index.styl'
 
 const ShopProducts = ({ img, isFull, style }) => {
@@ -19,8 +18,8 @@ const ShopProducts = ({ img, isFull, style }) => {
         else
           Text.description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercl itatio ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur
           View.buttons
-            Button.button(color='#E3E2E2' shape='squared' textColor='rgb(93, 93, 93)' size='l' variant="outlined") ADD TO CARD
-            Button.button.last(color='#E3E2E2' shape='squared' icon=faHeart size='l' variant="outlined")
+            Button.button(text='ADD TO CARD')
+            Button.button.last(icon={color:'#E3E2E2',name:'heart',size:'s'})
 
   `
 }

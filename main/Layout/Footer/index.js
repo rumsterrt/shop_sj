@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
-import { Link, Icon } from 'components'
+import { Link, Icon, Button } from 'components'
 import { emit } from 'startupjs'
 import { faTwitter, faTwitch, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { BASE_URL } from '@env'
@@ -15,10 +15,10 @@ const Footer = () => {
         Text.title
         = '20 Years Experience'
         View.icons
-          Icon.icon(icon=faTwitter size='xl' color='#3f3f3f' styleName='first')
-          Icon.icon(icon=faTwitch size='xl' color='#3f3f3f')
-          Icon.icon(icon=faFacebookF size='xl' color='#3f3f3f')
-          Icon.icon(icon=faInstagram size='xl' color='#3f3f3f')
+          Button.icon(icon={name:['fab','twitter'],size:'s', color:'#3f3f3f'} styleName='first')
+          Button.icon(icon={name:['fab','twitch'],size:'s', color:'#3f3f3f'})
+          Button.icon(icon={name:['fab','facebook-f'],size:'s', color:'#3f3f3f'})
+          Button.icon(icon={name:['fab','instagram'],size:'s', color:'#3f3f3f'})
       View.middle
         Image.logo(source={uri:base + '/img/logo.png'})
         View.nav

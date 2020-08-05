@@ -10,8 +10,8 @@ const Rating = ({ style, value = 0 }) => {
   return pug`
     View.root(style=style)
       each ITEM, index in ITEMS
-        View(key=index)
-          Icon(styleName=[{active:index < Math.round(value)}] icon=faStar)
+        View.iconWrap(key=index styleName=[{first: index === 0}])
+          Icon.icon(styleName=[{active:index < Math.round(value)}] icon=faStar size=12)
   `
 }
 
