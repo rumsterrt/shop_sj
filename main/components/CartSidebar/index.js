@@ -35,7 +35,7 @@ const CartSidebar = ({ onClose }) => {
               View.cardInfo
                 Text.cardName #{card.name}
                 Text.cardCommon #{card.common}
-              Icon.cardTrash(icon=faTrash color='black' size='l')
+              Icon.cardTrash(icon=faTrash color='black' size='s')
         View.total
           Text.totalText #{'Total: '}
             span $ 120

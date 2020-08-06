@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { observer, useLocal } from 'startupjs'
 import './index.styl'
 import { Button, Icon } from 'components'
@@ -9,9 +9,16 @@ import CurLangSidebar from 'main/components/CurLangSidebar'
 
 const Sidebar = () => {
   const [render, $render] = useLocal('_session.sidebar')
+  const [lastRender, setLastRender] = useState()
+
+  useEffect(() => {
+    if (render) {
+      setLastRender(render)
+    }
+  }, [render])
 
   const content = () => {
-    switch (render) {
+    switch (lastRender) {
       case 'search':
         return pug`
           View.searchBar

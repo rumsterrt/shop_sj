@@ -1,14 +1,15 @@
 .overlay
     background: rgba(0, 0, 0, 0.92)
     position: fixed
-    left: 100%
-    top: 0
-    bottom: 0
-    right: 0
+    transform translateX(100u)
+    top 0
+    bottom 0
+    right 0
+    left 0
     z-index 3
-    transition left 0.3s
+    transition transform 0.5s ease-in-out 0s
     &.active
-        left 0
+        transform translateX(0px)
     &.fake
         background transparent
         z-index 3
@@ -22,6 +23,7 @@
     border none
 
 .searchBar
+    background rgba(0, 0, 0, 0.92)
     padding 4u 5u
     justify-content center
     height 100%

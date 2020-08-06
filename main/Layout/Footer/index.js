@@ -1,8 +1,7 @@
 import React from 'react'
 import { View, Text, Image } from 'react-native'
-import { Link, Icon, Button } from 'components'
+import { Link, Button } from 'components'
 import { emit } from 'startupjs'
-import { faTwitter, faTwitch, faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { BASE_URL } from '@env'
 import './index.styl'
 
@@ -13,7 +12,7 @@ const Footer = () => {
     View.root
       View.top
         Text.title
-        = '20 Years Experience'
+          = '20 Years Experience'
         View.icons
           Button.icon(icon={name:['fab','twitter'],size:'s', color:'#3f3f3f'} styleName='first')
           Button.icon(icon={name:['fab','twitch'],size:'s', color:'#3f3f3f'})

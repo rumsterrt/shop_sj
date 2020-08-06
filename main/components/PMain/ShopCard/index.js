@@ -3,20 +3,23 @@ import { Text, View } from 'react-native'
 import { Button } from 'components'
 import './index.styl'
 
-const ShopProducts = ({ img, isFull, style }) => {
+const ShopProducts = ({ data, isFull, style }) => {
+  const { img, name, cost, category, description, isSale } = data
   const styleAdd = !isFull ? 'nofull' : 'full'
 
   return pug`
     View.root(style=style styleName=styleAdd)
       View.image(styleName=styleAdd style={backgroundImage: 'url('+img+')'})
+        if isSale
+          View.saleAddon SALE
       View.info(styleName=styleAdd)
         View.infoMain(styleName=styleAdd)
-          Text.infoName(styleName=styleAdd) WOODEN FURNITURE
-          Text.infoCost(styleName=styleAdd) $110.00
+          Text.infoName(styleName=styleAdd) #{name}
+          Text.infoCost(styleName=styleAdd) #{cost}
         if !isFull
-          Text.category Electronic
+          Text.category #{category}
         else
-          Text.description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor in ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercl itatio ullamco laboris nisi ut aliquip ex ea commodo consequat Lorem ipsum dolor sit amet, consectetur
+          Text.description #{description}
           View.buttons
             Button.button(text='ADD TO CARD')
             Button.button.last(icon={color:'#E3E2E2',name:'heart',size:'s'})

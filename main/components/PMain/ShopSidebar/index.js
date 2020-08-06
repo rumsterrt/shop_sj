@@ -76,14 +76,14 @@ const ShopSidebar = ({ style }) => {
           Text.sizeText LM
       View.widget
         Text.sidebarTitle Top rated products
-        View.widgetBody.topRatedAll
+        View.widgetBody
           each card, index in ratingData
             View.rateCard(key=index styleName=(index === 0 ? 'first' : ''))
               Image.rateImage(source=card.url)
               View.rateInfo
                 Text.text #{card.name}
                 Rating.rating(value=3)
-                Text.text #{card.price}
+                Text.ratePrice #{card.price}
   `
 }
 
