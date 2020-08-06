@@ -10,7 +10,7 @@ const ShopProducts = ({ data, isFull, style }) => {
   return pug`
     View.root(style=style styleName=styleAdd)
       View.image(styleName=styleAdd style={backgroundImage: 'url('+img+')'})
-        if isSale
+        if isSale && !isFull
           View.saleAddon SALE
       View.info(styleName=styleAdd)
         View.infoMain(styleName=styleAdd)
