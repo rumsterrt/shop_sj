@@ -29,8 +29,8 @@ const CartSidebar = ({ onClose }) => {
       View.main
         Text.title Shopping Cart
         View.cards
-          each card in data
-            View.card
+          each card, index in data
+            View.card(key=index)
               Image.cardImage(source=card.url)
               View.cardInfo
                 Text.cardName #{card.name}
@@ -38,9 +38,9 @@ const CartSidebar = ({ onClose }) => {
               Icon.cardTrash(icon=faTrash color='black' size='s')
         View.total
           Text.totalText #{'Total: '}
-            span $ 120
+            Text $ 120
         View.buttons
-          Button.button(text='VIEW CART') 
+          Button.button(text='VIEW CART')
           Button.button.last(text='CHECKOUT')
 
   `

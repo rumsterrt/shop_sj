@@ -1,22 +1,20 @@
 .root
-    padding-left 2u
-    padding-right 2u
+    padding-left 1u
+    padding-right 1u
     box-sizing border-box
-    max-width 100%
-    min-width auto
     width 100%
     margin-bottom 8u
     +tablet()
         flex-direction row
     &.nofull
         flex-direction column
-        min-width 40u
-        max-width 60u
+        flex 0 0
         margin-bottom 6u
+        flex-basis 100%
         +tablet()
-            flex 1
+            flex-basis 50%
         +wide()
-            min-width 25u
+            flex-basis 25%
 .image
     background-image url('/img/pic1.jpg')
     background-size cover

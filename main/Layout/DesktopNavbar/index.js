@@ -8,8 +8,8 @@ const DesktopNavbar = ({ data }) => {
 
   return pug`
     View.nav
-      each navElem in data
-        View.navElem(key=navElem onPress=() => $subMenuOpen.set(subMenuOpen === navElem.name ? null : navElem.name))
+      each navElem, index in data
+        View.navElem(key=index onPress=() => $subMenuOpen.set(subMenuOpen === navElem.name ? null : navElem.name))
           Text.navElemText #{navElem.name}
           if subMenuOpen === navElem.name && navElem.subNavs && navElem.subNavs.length > 0
             View.subnav

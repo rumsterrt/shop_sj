@@ -4,7 +4,6 @@ import Icon from '../Icon'
 import './index.styl'
 
 const Button = ({ text, onPress = () => {}, style, type = '', icon }) => {
-  console.log('icon', icon)
   return pug`
     TouchableOpacity.root(onPress=onPress style=style styleName=[type, {icon: !!icon} ])
       if text

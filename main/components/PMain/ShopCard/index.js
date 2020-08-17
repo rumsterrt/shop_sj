@@ -11,7 +11,8 @@ const ShopProducts = ({ data, isFull, style }) => {
     View.root(style=style styleName=styleAdd)
       View.image(styleName=styleAdd style={backgroundImage: 'url('+img+')'})
         if isSale && !isFull
-          View.saleAddon SALE
+          View.saleAddon
+            Text SALE
       View.info(styleName=styleAdd)
         View.infoMain(styleName=styleAdd)
           Text.infoName(styleName=styleAdd) #{name}
@@ -23,7 +24,6 @@ const ShopProducts = ({ data, isFull, style }) => {
           View.buttons
             Button.button(text='ADD TO CARD')
             Button.button.last(icon={color:'#E3E2E2',name:'heart',size:'s'})
-
   `
 }
 

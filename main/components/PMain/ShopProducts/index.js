@@ -115,8 +115,8 @@ const ShopProducts = () => {
   return pug`
     View.root
       View.shopBar
-        Text.itemsInfo 
-          Text.redText 23 
+        Text.itemsInfo
+          Text.redText 23
           = ' Product Found of '
           Text.redText 50
         View.shopFoundSelector
@@ -127,7 +127,7 @@ const ShopProducts = () => {
         View.shopFilterTab
           Icon(icon=faTh color=(!gridView ? '#ff4136' :'#6c6c6c') size='l' onPress=() => setGridView(false))
           Icon.lastTabButton(icon=faBars color=(gridView ? '#ff4136' :'#6c6c6c') size='l' onPress=() => setGridView(true))
-      View.shopContentWrapper 
+      View.shopContentWrapper
         View.shopContent(styleName=(gridView? 'grid' : ''))
           each card, index in cards
             ShopCard.card(key=index data=card isFull=gridView styleName=(index === 0 ? 'first' : ''))
