@@ -1,47 +1,45 @@
 import React, { useEffect, useState } from 'react'
 import { observer, useLocal } from 'startupjs'
 import './index.styl'
-import { Button, Icon } from 'components'
-import { TextInput, View } from 'react-native'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { View, Dimensions } from 'react-native'
 import CartSidebar from 'main/components/CartSidebar'
 import CurLangSidebar from 'main/components/CurLangSidebar'
+import SearchSidebar from 'main/components/SearchSidebar'
+import _ from 'lodash'
 
 const Sidebar = () => {
-  const [render, $render] = useLocal('_session.sidebar')
-  const [lastRender, setLastRender] = useState()
+  const [sidebar, $sidebar] = useLocal('_session.sidebar')
+  const [lastSidebar, setLastSidebar] = useState()
 
   useEffect(() => {
-    if (render) {
-      setLastRender(render)
+    if (sidebar) {
+      setLastSidebar(sidebar)
     }
-  }, [render])
+  }, [sidebar])
 
   const content = () => {
-    switch (lastRender) {
+    switch (_.get(lastSidebar, 'render')) {
       case 'search':
         return pug`
-          View.searchBar
-            Button.closeButton(icon={color:'white', size:'xl', name:'times'} onPress=() => $render.set(false))
-            View.search
-              TextInput.searchInput(icon=faSearch iconPosition="right" placeholder="Search Entire Store")
-              Icon.searchIcon(icon=faSearch color='white' size='l')
+          SearchSidebar(onClose=() => $sidebar.set(false))
             `
       case 'cart':
         return pug`
-          CartSidebar.cartSidebar(onClose=() => $render.set(false))
+          CartSidebar(onClose=() => $sidebar.set(false))
         `
       case 'lang':
         return pug`
-          CurLangSidebar(onClose=() => $render.set(false))
+          CurLangSidebar(onClose=() => $sidebar.set(false))
         `
     }
     return null
   }
 
+  const transform = `translateX(${!sidebar ? Dimensions.get('window').width : 0}px)`
+
   return pug`
-    View.overlay(styleName=render? 'active': '')
-    View.overlay.fake(styleName=render? 'active': '')
+    View.overlay(styleName=[{active: !!sidebar, hide: _.get(lastSidebar, 'noOverlay')}])
+    View.wrapper(styleName=[{active: !!sidebar}] style={transform})
       = content()
   `
 }

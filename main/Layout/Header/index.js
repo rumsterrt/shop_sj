@@ -16,7 +16,7 @@ const Header = ({ children }) => {
 
   const handleBurger = () => {
     if (Dimensions.get('window').width > 768) {
-      $sidebar.set('lang')
+      $sidebar.set({ render: 'lang' })
       return
     }
 
@@ -30,8 +30,8 @@ const Header = ({ children }) => {
           Image.logo(source={uri:base + '/img/logo.png'})
           DesktopNavbar(data=navBarArray)
           View.buttons
-            Button.button(icon={color:'black', size:'s', name:'search'} onPress=() => $sidebar.set('search'))
-            Button.button(icon={color:'black', size:'s', name:'shopping-bag'} onPress=() => $sidebar.set('cart'))
+            Button.button(icon={color:'black', size:'s', name:'search'} onPress=() => $sidebar.set({render:'search', noOverlay: true}))
+            Button.button(icon={color:'black', size:'s', name:'shopping-bag'} onPress=() => $sidebar.set({render:'cart'}))
             Button.button.burger(icon={color:'black', size:'s', name:menuOpen ? 'times' : 'bars'} onPress=handleBurger)
         MobileNavbar(data=navBarArray isOpen=menuOpen)
       View.body= children

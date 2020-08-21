@@ -3,21 +3,24 @@
     top 1u
     right 1u
     align-self flex-end
-    z-index 2
+    z-index 3
     border none
 
 .root
+    z-index 4
     padding 4u 2u
     justify-content center
     height 100%
     background white
     overflow scroll
+    max-width 60u
+    margin-left auto
+    width 100%
     +tablet()
+        margin-left auto
         width 70%
-        margin-left 30%
     +wide()
         width 30%
-        margin-left 70%
 
 .title
     font-weight 600
