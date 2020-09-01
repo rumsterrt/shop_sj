@@ -1,6 +1,4 @@
 .root
-    padding-left 1u
-    padding-right 1u
     box-sizing border-box
     width 100%
     margin-bottom 8u
@@ -15,6 +13,9 @@
             flex-basis 50%
         +wide()
             flex-basis 25%
+    +tablet()
+        padding-left 1u
+        padding-right 1u
 .image
     background-image url('/img/pic1.jpg')
     background-size cover

@@ -30,7 +30,7 @@ const Header = ({ children }) => {
           Image.logo(source={uri:base + '/img/logo.png'})
           DesktopNavbar(data=navBarArray)
           View.buttons
-            Button.button(icon={color:'black', size:'s', name:'search'} onPress=() => $sidebar.set({render:'search', noOverlay: true}))
+            Button.button.first(icon={color:'black', size:'s', name:'search'} onPress=() => $sidebar.set({render:'search', noOverlay: true}))
             Button.button(icon={color:'black', size:'s', name:'shopping-bag'} onPress=() => $sidebar.set({render:'cart'}))
             Button.button.burger(icon={color:'black', size:'s', name:menuOpen ? 'times' : 'bars'} onPress=handleBurger)
         MobileNavbar(data=navBarArray isOpen=menuOpen)

@@ -11,8 +11,7 @@ const ShopProducts = ({ data, isFull, style }) => {
     View.root(style=style styleName=styleAdd)
       View.image(styleName=styleAdd style={backgroundImage: 'url('+img+')'})
         if isSale && !isFull
-          View.saleAddon
-            Text SALE
+          Text.saleAddon SALE
       View.info(styleName=styleAdd)
         View.infoMain(styleName=styleAdd)
           Text.infoName(styleName=styleAdd) #{name}
