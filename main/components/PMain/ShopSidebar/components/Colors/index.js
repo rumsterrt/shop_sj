@@ -6,7 +6,7 @@ const data = ['red', 'pink', 'blue', 'yellow', 'green', 'purple']
 
 const Colors = () => {
   return pug`
-    View
+    View.root
       Text.title color
       View.body
         each color, index in data

@@ -6,7 +6,7 @@ const data = ['XL', 'M', 'L', 'ML', 'LM']
 
 const Sizes = () => {
   return pug`
-    View
+    View.root
       Text.title size
       View.body
         each size, index in data

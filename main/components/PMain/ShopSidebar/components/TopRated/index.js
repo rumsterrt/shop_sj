@@ -32,7 +32,7 @@ const ratingData = [
 
 const TopRated = () => {
   return pug`
-    View
+    View.root
       Text.title Top rated products
       View.body
         each card, index in ratingData

@@ -27,7 +27,7 @@ const data = [
 
 const Categories = () => {
   return pug`
-    View
+    View.root
       Text.title Categories
       View.body
         each category, index in data
