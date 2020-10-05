@@ -3,14 +3,24 @@ $headerHeight = 16u
 .root
   background-color white
   z-index 2
-  padding 4u 2u
   border-bottom-width 1px
   border-bottom-color rgba(black, 0.05)
   position absolute
   width 100%
-  display block
+  align-items  center
+
+.container
+  display flex
+  justify-content flex-start
+  align-items flex-start
+  padding 4u 2u
+  box-sizing border-box
+  width 100%
   +tablet()
     padding 4u 3u
+    align-items center
+    flex-direction row
+    flex-wrap wrap
   +wide()
     padding 0 20u
 

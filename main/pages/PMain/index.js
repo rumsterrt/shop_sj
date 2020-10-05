@@ -8,8 +8,8 @@ import './index.styl'
 const PMain = () => {
   return pug`
     View.layout
+      Breadcrump
       View.wrapper
-        Breadcrump
         View.main
           ShopSidebar.sidebar
           ShopProducts
