@@ -1,0 +1,105 @@
+.root
+    background  #f5f5f5
+    align-items:  center
+
+.container
+    display flex
+    justify-content flex-start
+    align-items flex-start
+    padding 4u 2u 10u 2u
+    box-sizing border-box
+    width 100%
+    +tablet()
+        align-items center
+        flex-direction row
+        flex-wrap wrap
+    +wide()
+        max-width 150u
+    
+.logo
+  justify-content center
+  width 15u
+  height 4u
+
+.title
+    color black
+    font-size 2u
+
+
+.top, .bottom, .middle
+    flex 0 0
+    flex-basis 100%
+    align-items flex-start
+
+.top
+    +tablet()
+        flex-basis 41.666667%
+    +wide()
+        flex-basis 25%
+
+.middle
+    +tablet()
+        align-items center
+        flex-basis 58.333333%
+    +wide()
+        flex-basis 50%
+
+.bottom
+    +tablet()
+        flex-basis 100%
+    +wide()
+        flex-basis 25%
+
+
+.bottom, .middle
+    margin-top 4u
+    +tablet()
+        margin-top 0
+
+.icon
+    border-radius 100%
+    border 1px solid #3f3f3f
+    padding 1u
+    box-sizing border-box
+    margin-left 2u
+    &.first
+        margin-left 0
+
+.icons
+    margin-top 2u
+    flex-direction row
+
+.nav
+    margin-top 3u
+    flex-direction row
+
+.navElem
+    margin-left 1u
+    &.first
+        margin-left 0
+
+.navBorder
+    margin-top 2u
+    height 1px
+    width 20u
+    background #6d6d6d
+
+.tableRow
+    margin-top 2u
+    flex-direction row
+.tableName, .tableValue
+    color #585858
+.tableName 
+    font-weight: 600
+.tableValue
+    margin-left 1u
+
+.copyright
+    color #585858
+    font-size 2u
+    margin-top 2u
+    line-height 3u
+    +tablet()
+        font-size 1.5u
+        line-height 2u
+

@@ -1,0 +1,60 @@
+$headerHeight = 16u
+
+.root
+  background-color white
+  z-index 2
+  border-bottom-width 1px
+  border-bottom-color rgba(black, 0.05)
+  position absolute
+  width 100%
+  align-items  center
+
+.container
+  display flex
+  justify-content flex-start
+  align-items flex-start
+  padding 4u 2u
+  box-sizing border-box
+  width 100%
+  +tablet()
+    padding 4u 3u
+    align-items center
+    flex-direction row
+    flex-wrap wrap
+  +wide()
+    padding 0 20u
+
+.headerSpace
+  height 12u
+
+.logo
+  justify-content center
+  width 15u
+  height 4u
+
+.body
+  flex 1
+
+.buttons
+  flex-direction row
+
+.button
+  margin-left 2u
+  border none 
+  &.burger
+    border 1px solid grey 
+    padding 4px
+    border-radius 0
+  &.first
+    margin-left 0
+
+.header
+    height 100%
+    width 100%
+
+.topHeader
+    flex 0 0
+    flex-basis 100%
+    justify-content space-between
+    flex-direction row
+    align-items center

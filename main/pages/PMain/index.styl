@@ -1,0 +1,23 @@
+.wrapper
+  margin 0 auto
+  width calc(100% - 6u)
+  height 100%
+  +tablet()  
+    width calc(100% - 6u)
+  +wide()  
+    max-width calc(100% - 40u)
+
+.layout
+  background white
+  width 100%
+  min-height 100%
+
+.main
+  background white
+  +wide()
+    flex-direction row
+  
+.sidebar
+  +wide()
+    width 20%
+  

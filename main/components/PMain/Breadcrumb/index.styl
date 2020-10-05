@@ -1,0 +1,39 @@
+.root
+    background-image url(/img/breadcrumb.jpg)
+    background-size cover
+    background-position 48% center
+    padding 8u 2u
+    margin 0 -3u
+    +tablet()
+        padding 12u 3u
+        margin 0 -3u
+    +wide()
+        padding 26u 0
+        margin 0 0
+
+.wrapper
+    margin auto
+    width calc(100% - 6u)
+    +tablet()
+        width calc(100% - 6u)
+    +wide()
+        width 100%
+        max-width 120u
+
+.title
+    font-size 4u
+    text-transform capitalize
+    font-weight bold
+    color #585858
+
+.slice
+    padding 0 1u
+.nav
+    flex-direction row
+    margin-top 2u
+.navElem
+    font-size 2u
+    font-weight 600
+    color #7c7c7c
+    &.select
+        color #585858

@@ -1,0 +1,29 @@
+.wrapper
+    top 0
+    bottom 0
+    right 0
+    left 0
+    z-index 3
+    position: fixed
+    transition transform 0.5s ease-in-out 0s
+    &.active
+        transform translateX(0)
+
+.overlay
+    background: rgba(0, 0, 0, 0.92)
+    top 0
+    bottom 0
+    right 0
+    left 0
+    position: fixed
+    opacity 0
+    transition all 0.5s ease-in-out 0s
+    visibility hidden
+    z-index 2
+    &.active
+        opacity 1
+        visibility visible
+    &.hide
+        display none
+
+

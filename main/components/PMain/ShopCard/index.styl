@@ -1,0 +1,84 @@
+.root
+    box-sizing border-box
+    width 100%
+    margin-bottom 8u
+    +tablet()
+        flex-direction row
+    &.nofull
+        flex-direction column
+        flex 0 0
+        margin-bottom 6u
+        flex-basis 100%
+        +tablet()
+            flex-basis 50%
+        +wide()
+            flex-basis 25%
+    +tablet()
+        padding-left 1u
+        padding-right 1u
+.image
+    background-image url('/img/pic1.jpg')
+    background-size cover
+    background-position center center
+    background-repeat no-repeat
+    min-height 44u
+    width 100%
+    +tablet()
+        &.full
+            min-height 48u
+            flex 0 0 320px
+    +wide()
+        min-height 15vw
+
+.info 
+    margin-top 2u
+    +tablet()
+        &.full
+            margin-left 4u
+            flex 1
+
+.infoMain
+    flex-direction row
+    justify-content space-between
+    &.full
+        flex-direction column
+.infoName
+    color #5d5d5d
+    font-size 2u
+    font-weight 600
+    &.full
+        font-size 3u
+        color #191919
+.infoCost
+    color #ee3333
+    font-weight 600
+    font-size 2u
+    &.full
+        color #b5b5b5
+        font-size 3u
+        margin-top 2u
+.category
+    color #474747
+    font-size 2u
+    margin-top 2u
+.description
+    color #818181
+    font-size 2u
+    margin-top 3u
+.buttons
+    flex-direction row
+    margin-top 3u
+    
+.button
+    &.last
+        margin-left 2u
+        padding 2u
+
+.saleAddon
+    position absolute
+    top 2u
+    left 2u
+    color #fff
+    background-color #626262
+    font-weight 600
+    padding 1u 2u
